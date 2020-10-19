@@ -1,0 +1,29 @@
+*{
+    margin: 0;
+}
+
+html, body{
+    font-family: serif;
+    font-size: 18px;
+}
+
+form{
+    margin: 50px auto;
+    max-width: 500px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 4px;
+}
+
+form div{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+input, textarea{
+    flex-grow: 1;
+}
+
+form label{
+    padding-right: 10px;
+}

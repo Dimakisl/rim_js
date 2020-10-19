@@ -1,0 +1,51 @@
+const decimalValue = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+const romanValue = ['M', 'CM' ,'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I'];
+
+
+
+const  romes = {
+    'M': 1000,
+    'CM': 900,
+    'D': 500, 
+    'CD': 400,
+    'C': 100,
+    'XC': 90,
+    'L': 50,
+    'XL': 40,
+    'X': 10,
+    'IX': 9,
+    'V': 5,
+    'IV': 4,
+    'I': 1
+}
+
+
+function romanConverterOne(a){
+    let result = '';
+    decimalValue.map((item, index) => {
+        while(item <= a){
+            result += romanValue[index];
+            a = a - item;
+        }
+    });
+
+    return result;
+}
+
+function romanConverterTwo(a){
+    let result = '';
+    for(let key in romes){
+        while(romes[key] <= a){
+            result += key;
+            a = a - romes[key];
+        }
+    }
+    return result;
+}
+
+
+document.querySelector('button').onclick = () => {
+    let num = +document.querySelector('input').value;
+    //document.querySelector('.out').innerHTML = romanConverterOne(num);
+    document.querySelector('.out').innerHTML = romanConverterTwo(num);
+};
